@@ -10,29 +10,30 @@ import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 
 public class ModFacetofaceSignupPage {
-	
+
 	WebDriver driver;
-	@FindBy(className="alert-message")
+	@FindBy(className = "alert-message")
 	WebElement alertMessage;
-	@FindBy(xpath="(//a[@title='Seminar'])[2]")
+	@FindBy(xpath = "(//a[@title='Seminar'])[2]")
 	WebElement resusTrainingLink;
-	@FindBy(xpath="//div[@class=\"upcomingsessionlist\"]//tbody/tr")
+	@FindBy(xpath = "//div[@class=\"upcomingsessionlist\"]//tbody/tr")
 	List<WebElement> upcomingEvents;
-	@FindBy(linkText="Add a new event")
+	@FindBy(linkText = "Add a new event")
 	WebElement addNewEvent;
+
 	public ModFacetofaceSignupPage(WebDriver driver) {
 		this.driver = driver;
 		PageFactory.initElements(driver, this);
 	}
-	
+
 	public String getAlertMessage() {
 		return alertMessage.getText();
 	}
-	
+
 	public void clickResusTrainingLink() {
 		resusTrainingLink.click();
 	}
-	
+
 	public List<String> getEventDetails() {
 		List<String> eventDetails = new ArrayList<String>();
 		for (WebElement eventRow : upcomingEvents) {
@@ -45,7 +46,7 @@ public class ModFacetofaceSignupPage {
 		}
 		return eventDetails;
 	}
-	
+
 	public void clickAddNewEvent() {
 		addNewEvent.click();
 	}

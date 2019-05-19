@@ -6,15 +6,16 @@ import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 
 public class HierarchyIndexPage {
-	
+
 	WebDriver driver;
-	@FindBy(xpath="//input[@value='Add new organisation']")
+	@FindBy(xpath = "//input[@value='Add new organisation']")
 	WebElement addNewOrg;
+
 	public HierarchyIndexPage(WebDriver driver) {
 		this.driver = driver;
 		PageFactory.initElements(driver, this);
 	}
-	
+
 	public void clickAddNewOrganisation() {
 		addNewOrg.click();
 	}

@@ -10,23 +10,23 @@ import org.testng.annotations.Test;
 import pages.theinterenet.LoginPage;
 
 public class TestLogin {
-	
+
 	WebDriver driver;
 	LoginPage objLogin;
-	
+
 	@BeforeTest
-    public void beforeTest() {
-    	driver = new ChromeDriver();
-    	driver.get("https://the-internet.herokuapp.com/login");
-    }
-	
+	public void beforeTest() {
+		driver = new ChromeDriver();
+		driver.get("https://the-internet.herokuapp.com/login");
+	}
+
 	@AfterTest
-    public void afterTest() {
-    	driver.quit();
-    }
-	
+	public void afterTest() {
+		driver.quit();
+	}
+
 	@Test
-    public void loginLogout() {
+	public void loginLogout() {
 		objLogin = new LoginPage(driver);
 		objLogin.setUsername("tomsmith");
 		objLogin.setPassword("SuperSecretPassword!");
@@ -34,7 +34,7 @@ public class TestLogin {
 		String loginMessage = objLogin.getFlashMessage();
 		objLogin.clickLogout();
 		String logoutMessage = objLogin.getFlashMessage();
-		
+
 		Assert.assertTrue(loginMessage.contains("You logged into a secure area!"));
 		Assert.assertTrue(logoutMessage.contains("You logged out of the secure area!"));
 	}

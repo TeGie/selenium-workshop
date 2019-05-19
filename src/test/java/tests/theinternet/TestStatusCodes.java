@@ -10,23 +10,23 @@ import org.testng.annotations.Test;
 import pages.theinterenet.StatusCodesPage;
 
 public class TestStatusCodes {
-	
+
 	WebDriver driver;
 	StatusCodesPage objStatusCodes;
-	
+
 	@BeforeTest
-    public void beforeTest() {
-    	driver = new ChromeDriver();
-    	driver.get("https://the-internet.herokuapp.com/status_codes");
-    }
-	
+	public void beforeTest() {
+		driver = new ChromeDriver();
+		driver.get("https://the-internet.herokuapp.com/status_codes");
+	}
+
 	@AfterTest
-    public void afterTest() {
-    	driver.quit();
-    }
-	
+	public void afterTest() {
+		driver.quit();
+	}
+
 	@Test
-    public void checkStatusCodes() {
+	public void checkStatusCodes() {
 		objStatusCodes = new StatusCodesPage(driver);
 		objStatusCodes.clickPage("200");
 		String status200 = objStatusCodes.getStatusCode();
@@ -39,7 +39,7 @@ public class TestStatusCodes {
 		driver.get("https://the-internet.herokuapp.com/status_codes");
 		objStatusCodes.clickPage("500");
 		String status500 = objStatusCodes.getStatusCode();
-		
+
 		Assert.assertTrue(status200.contains("200"));
 		Assert.assertTrue(status301.contains("301"));
 		Assert.assertTrue(status404.contains("404"));

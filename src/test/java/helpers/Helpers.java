@@ -11,13 +11,16 @@ public class Helpers {
 		Random rand = new Random();
 		return Integer.toString(rand.nextInt(100) + 1);
 	}
-	
-	public static String getDateTime(String format) {	
+
+	public static String getDateTime(String format) {
 		SimpleDateFormat formatter = new SimpleDateFormat(format, Locale.ENGLISH);
 		String dateTime = formatter.format(new Date());
-	    if (format.equals("mm") && !dateTime.endsWith("5")) {
-	    	dateTime = Integer.toString(Math.round(Integer.parseInt(dateTime) / 5) * 5);    	    	
-	    }
+		if (format.equals("mm") && (!dateTime.endsWith("5") || !dateTime.endsWith("0"))) {
+			dateTime = Integer.toString(Math.round(Integer.parseInt(dateTime) / 5) * 5);
+			if (dateTime.length() == 1) {
+				dateTime = "0" + dateTime;
+			}
+		}
 		return dateTime;
 	}
 }

@@ -9,17 +9,18 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 
 public class DataTablesPage {
-	
+
 	WebDriver driver;
+
 	public DataTablesPage(WebDriver driver) {
 		this.driver = driver;
 	}
-	
+
 	public void printCellText(String table, int row, int col) {
 		String tableCell = "//*[@id='" + table + "']/tbody/tr[" + row + "]/td[" + col + "]";
 		System.out.println(driver.findElement(By.xpath(tableCell)).getText());
 	}
-	
+
 	public void printDueSum(String table) {
 		String tableRows = "//*[@id='" + table + "']/tbody/tr";
 		List<WebElement> rows = driver.findElements(By.xpath(tableRows));

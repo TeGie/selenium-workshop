@@ -12,20 +12,20 @@ public class TestDataTables {
 
 	WebDriver driver;
 	DataTablesPage objDataTables;
-	
+
 	@BeforeTest
-    public void beforeTest() {
-    	driver = new ChromeDriver();
-    	driver.get("https://the-internet.herokuapp.com/tables");
-    }
-	
+	public void beforeTest() {
+		driver = new ChromeDriver();
+		driver.get("https://the-internet.herokuapp.com/tables");
+	}
+
 	@AfterTest
-    public void afterTest() {
-    	driver.quit();
-    }
-	
+	public void afterTest() {
+		driver.quit();
+	}
+
 	@Test
-    public void getDataFromTable() {
+	public void getDataFromTable() {
 		objDataTables = new DataTablesPage(driver);
 		objDataTables.printCellText("table1", 3, 1);
 		objDataTables.printCellText("table1", 3, 2);

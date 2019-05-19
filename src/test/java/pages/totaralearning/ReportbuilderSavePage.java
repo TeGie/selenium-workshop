@@ -6,25 +6,26 @@ import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 
 public class ReportbuilderSavePage {
-	
+
 	WebDriver driver;
-	@FindBy(id="id_submitbutton")
+	@FindBy(id = "id_submitbutton")
 	WebElement searchNameSave;
-	@FindBy(id="id_name")
+	@FindBy(id = "id_name")
 	WebElement searchNameInput;
+
 	public ReportbuilderSavePage(WebDriver driver) {
 		this.driver = driver;
 		PageFactory.initElements(driver, this);
 	}
-	
+
 	public void writeSearchName(String name) {
 		searchNameInput.sendKeys(name);
 	}
-	
+
 	public void clickSaveSearchName() {
 		searchNameSave.click();
 	}
-	
+
 	public void saveSearch(String name) {
 		this.writeSearchName(name);
 		this.clickSaveSearchName();
