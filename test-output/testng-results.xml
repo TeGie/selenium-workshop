@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testng-results skipped="0" failed="0" ignored="0" total="1" passed="1">
+  <reporter-output>
+  </reporter-output>
+  <suite name="Default suite" duration-ms="43129" started-at="2019-05-19T17:35:39Z" finished-at="2019-05-19T17:36:22Z">
+    <groups>
+    </groups>
+    <test name="Default test" duration-ms="43129" started-at="2019-05-19T17:35:39Z" finished-at="2019-05-19T17:36:22Z">
+      <class name="tests.totaralearning.TestCase3">
+        <test-method status="PASS" signature="beforeTest()[pri:0, instance:tests.totaralearning.TestCase3@68c4039c]" name="beforeTest" is-config="true" duration-ms="10010" started-at="2019-05-19T17:35:39Z" finished-at="2019-05-19T17:35:49Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- beforeTest -->
+        <test-method status="PASS" signature="testCase3()[pri:0, instance:tests.totaralearning.TestCase3@68c4039c]" name="testCase3" duration-ms="31847" started-at="2019-05-19T17:35:49Z" finished-at="2019-05-19T17:36:21Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- testCase3 -->
+        <test-method status="PASS" signature="afterTest()[pri:0, instance:tests.totaralearning.TestCase3@68c4039c]" name="afterTest" is-config="true" duration-ms="1250" started-at="2019-05-19T17:36:21Z" finished-at="2019-05-19T17:36:22Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- afterTest -->
+      </class> <!-- tests.totaralearning.TestCase3 -->
+    </test> <!-- Default test -->
+  </suite> <!-- Default suite -->
+</testng-results>
