@@ -1,22 +1,21 @@
 package pages.theinterenet;
 
+import io.restassured.RestAssured;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
 
 public class StatusCodesPage {
 
 	WebDriver driver;
-	By statusCode = By.xpath("//*[@id='content']/div/p");
 
 	public StatusCodesPage(WebDriver driver) {
 		this.driver = driver;
 	}
 
-	public void clickPage(String code) {
-		driver.findElement(By.linkText(code)).click();
-	}
-
-	public String getStatusCode() {
-		return driver.findElement(statusCode).getText();
+	public int getCode(String code) {
+		WebElement link = driver.findElement(By.linkText(code));
+		String href = link.getAttribute("href");
+		return RestAssured.get(href).statusCode();
 	}
 }

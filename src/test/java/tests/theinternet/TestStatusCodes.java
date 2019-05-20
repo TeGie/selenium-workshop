@@ -28,21 +28,15 @@ public class TestStatusCodes {
 	@Test
 	public void checkStatusCodes() {
 		objStatusCodes = new StatusCodesPage(driver);
-		objStatusCodes.clickPage("200");
-		String status200 = objStatusCodes.getStatusCode();
-		driver.get("https://the-internet.herokuapp.com/status_codes");
-		objStatusCodes.clickPage("301");
-		String status301 = objStatusCodes.getStatusCode();
-		driver.get("https://the-internet.herokuapp.com/status_codes");
-		objStatusCodes.clickPage("404");
-		String status404 = objStatusCodes.getStatusCode();
-		driver.get("https://the-internet.herokuapp.com/status_codes");
-		objStatusCodes.clickPage("500");
-		String status500 = objStatusCodes.getStatusCode();
 
-		Assert.assertTrue(status200.contains("200"));
-		Assert.assertTrue(status301.contains("301"));
-		Assert.assertTrue(status404.contains("404"));
-		Assert.assertTrue(status500.contains("500"));
+		int code200 = objStatusCodes.getCode("200");
+		// int code301 = objStatusCodes.getCode("301");
+		int code404 = objStatusCodes.getCode("404");
+		int code500 = objStatusCodes.getCode("500");
+
+		Assert.assertEquals(code200, 200);
+		// Assert.assertEquals(code301, 301);
+		Assert.assertEquals(code404, 404);
+		Assert.assertEquals(code500, 500);
 	}
 }

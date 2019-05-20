@@ -1,21 +1,21 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
 <suite name="Suite">
-  <test thread-count="5" name="Test">
-    <classes>
-      <class name="tests.theinternet.TestBasicAuth"/>
-      <class name="tests.theinternet.TestAddRemoveElements"/>
-      <class name="tests.theinternet.TestCheckboxes"/>
-      <class name="tests.theinternet.TestStatusCodes"/>
-      <class name="tests.theinternet.TestDataTables"/>
-      <class name="tests.theinternet.TestDynamicControls"/>
-      <class name="tests.totaralearning.TestCase3"/>
-      <class name="tests.theinternet.TestDropdown"/>
-      <class name="tests.totaralearning.TestCase2"/>
-      <class name="tests.totaralearning.TestCase1"/>
-      <class name="tests.theinternet.TestNotificationMessage"/>
-      <class name="tests.theinternet.TestDynamicLoading"/>
-      <class name="tests.theinternet.TestLogin"/>
-    </classes>
-  </test> <!-- Test -->
+	<test thread-count="5" name="Test">
+		<classes>
+			<class name="tests.theinternet.TestBasicAuth" />
+			<class name="tests.theinternet.TestAddRemoveElements" />
+			<class name="tests.theinternet.TestCheckboxes" />
+			<class name="tests.theinternet.TestStatusCodes" />
+			<class name="tests.theinternet.TestDataTables" />
+			<class name="tests.theinternet.TestDynamicControls" />
+			<class name="tests.totaralearning.TestCase3" />
+			<class name="tests.theinternet.TestDropdown" />
+			<class name="tests.totaralearning.TestCase2" />
+			<class name="tests.totaralearning.TestCase1" />
+			<class name="tests.theinternet.TestNotificationMessage" />
+			<class name="tests.theinternet.TestDynamicLoading" />
+			<class name="tests.theinternet.TestLogin" />
+		</classes>
+	</test> <!-- Test -->
 </suite> <!-- Suite -->
