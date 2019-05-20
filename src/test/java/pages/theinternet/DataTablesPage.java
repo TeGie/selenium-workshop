@@ -1,4 +1,4 @@
-package pages.theinterenet;
+package pages.theinternet;
 
 import java.util.List;
 import java.util.regex.Matcher;

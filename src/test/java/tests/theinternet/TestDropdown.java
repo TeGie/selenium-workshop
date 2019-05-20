@@ -2,7 +2,7 @@ package tests.theinternet;
 
 import org.testng.annotations.Test;
 
-import pages.theinterenet.DropdownPage;
+import pages.theinternet.DropdownPage;
 
 import org.testng.annotations.BeforeTest;
 import org.openqa.selenium.WebDriver;

@@ -1,4 +1,4 @@
-package pages.theinterenet;
+package pages.theinternet;
 
 import io.restassured.RestAssured;
 

@@ -8,7 +8,7 @@ import org.testng.annotations.AfterTest;
 import org.testng.annotations.BeforeTest;
 import org.testng.annotations.Test;
 
-import pages.theinterenet.DynamicControlsPage;
+import pages.theinternet.DynamicControlsPage;
 
 public class TestDynamicControls {
 

@@ -8,7 +8,7 @@ import org.testng.annotations.AfterTest;
 import org.testng.annotations.BeforeTest;
 import org.testng.annotations.Test;
 
-import pages.theinterenet.StatusCodesPage;
+import pages.theinternet.StatusCodesPage;
 
 public class TestStatusCodes {
 

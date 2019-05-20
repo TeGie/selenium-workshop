@@ -2,7 +2,7 @@ package tests.theinternet;
 
 import org.testng.annotations.Test;
 
-import pages.theinterenet.AddRemoveElementsPage;
+import pages.theinternet.AddRemoveElementsPage;
 
 import org.testng.Assert;
 import org.testng.annotations.AfterTest;

@@ -7,7 +7,7 @@ import org.testng.annotations.AfterTest;
 import org.testng.annotations.BeforeTest;
 import org.testng.annotations.Test;
 
-import pages.theinterenet.BasicAuthPage;
+import pages.theinternet.BasicAuthPage;
 
 public class TestBasicAuth {
 

@@ -2,7 +2,7 @@ package tests.theinternet;
 
 import org.testng.annotations.Test;
 
-import pages.theinterenet.CheckboxesPage;
+import pages.theinternet.CheckboxesPage;
 
 import org.testng.annotations.BeforeTest;
 import org.openqa.selenium.WebDriver;
