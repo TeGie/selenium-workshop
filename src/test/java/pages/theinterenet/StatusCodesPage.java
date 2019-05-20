@@ -2,7 +2,6 @@ package pages.theinterenet;
 
 import io.restassured.RestAssured;
 
-//import org.apache.http.client.ClientProtocolException;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
