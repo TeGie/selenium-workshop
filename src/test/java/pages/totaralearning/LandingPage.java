@@ -31,5 +31,4 @@ public class LandingPage {
 	public void logAsCourseCreator() {
 		courseCreatorLogin.click();
 	}
-
 }

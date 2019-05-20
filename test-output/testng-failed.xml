@@ -3,13 +3,13 @@
 <suite guice-stage="DEVELOPMENT" name="Failed suite [Default suite]">
   <test thread-count="5" name="Default test(failed)">
     <classes>
-      <class name="tests.totaralearning.TestCase3">
+      <class name="tests.theinternet.TestStatusCodes">
         <methods>
           <include name="beforeTest"/>
           <include name="afterTest"/>
-          <include name="testCase3"/>
+          <include name="checkRedirectException"/>
         </methods>
-      </class> <!-- tests.totaralearning.TestCase3 -->
+      </class> <!-- tests.theinternet.TestStatusCodes -->
     </classes>
   </test> <!-- Default test(failed) -->
 </suite> <!-- Failed suite [Default suite] -->
