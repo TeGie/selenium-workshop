@@ -33,7 +33,7 @@ public class TestDynamicLoading {
 		objDynamicLoading = new DynamicLoadingPage(driver, wait);
 		String message1 = objDynamicLoading.waitForHelloExample1();
 		driver.get("https://the-internet.herokuapp.com/dynamic_loading");
-		String message2 = objDynamicLoading.waitForHelloExample1();
+		String message2 = objDynamicLoading.waitForHelloExample2();
 
 		Assert.assertEquals(message1, "Hello World!");
 		Assert.assertEquals(message2, "Hello World!");

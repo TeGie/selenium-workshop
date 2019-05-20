@@ -2,9 +2,9 @@ package tests.totaralearning;
 
 import java.util.List;
 
-import org.junit.Assert;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
+import org.testng.Assert;
 import org.testng.annotations.AfterTest;
 import org.testng.annotations.BeforeTest;
 import org.testng.annotations.Test;
@@ -68,7 +68,7 @@ public class TestCase3 {
 		}
 		objDashPage.clickLogOut();
 
-		Assert.assertEquals("The signup user has conflicting signups", alertMsg);
+		Assert.assertEquals(alertMsg, "The signup user has conflicting signups");
 
 		System.out.println("### Resuscitation training ###");
 		System.out.println("Event date/time: " + eventDate);
