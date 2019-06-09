@@ -3,7 +3,6 @@ package pages.totaralearning;
 import java.util.ArrayList;
 import java.util.List;
 
-import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
@@ -32,9 +31,8 @@ public class ReportbuilderReportPage {
 	WebElement saveSearch;
 	@FindBy(id = "id_submitgroupstandard_clearstandardfilters")
 	WebElement clearSearch;
-	// @FindBy(id="id_certcompletion-status_op")
-	// WebElement statusOptionDropdown;
-	By statusOptionDropdown = By.id("id_certcompletion-status_op");
+	@FindBy(id = "id_certcompletion-status_op")
+	WebElement statusOptionDropdown;
 	@FindBy(id = "id_certcompletion-status")
 	WebElement statusDropdown;
 	@FindBy(xpath = "//td[contains(@class, 'user_namelink')]/a")
@@ -66,7 +64,7 @@ public class ReportbuilderReportPage {
 	}
 
 	public List<String> getUsersFullNames() {
-		List<String> fullNames = new ArrayList<String>();
+		ArrayList<String> fullNames = new ArrayList<String>();
 		for (WebElement cell : usersFullNames) {
 			fullNames.add(cell.getText());
 		}
@@ -74,9 +72,8 @@ public class ReportbuilderReportPage {
 	}
 
 	public void selectStatusOption(String option) {
-		WebElement statusOptionDropdownExists = wait
-				.until(ExpectedConditions.presenceOfElementLocated(statusOptionDropdown));
-		Select selectList = new Select(statusOptionDropdownExists);
+		WebElement statusOptionDropdownVisible = wait.until(ExpectedConditions.visibilityOf(statusOptionDropdown));
+		Select selectList = new Select(statusOptionDropdownVisible);
 		selectList.selectByVisibleText(option);
 	}
 

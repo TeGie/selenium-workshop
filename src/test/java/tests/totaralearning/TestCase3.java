@@ -39,6 +39,9 @@ public class TestCase3 {
 		objCalViewPage = new CalendarViewPage(driver);
 		objMFSignupPage = new ModFacetofaceSignupPage(driver);
 		objMFEventsAddPage = new ModFacetofaceEventsAddPage(driver);
+		String[] sDateTime = Helpers.getDateTime("d MMMM yyyy HH mm", "Europe/Warsaw").split(" ");
+		String[] eDateTime = { "29", "June", "2019", "14", "00", "Europe/Warsaw" };
+		String[] eventData = { "9", "2", "200zł", "150zł", "This is a simple test to add new events." };
 
 		objLandPage.logAsCourseCreator();
 		objDashPage.clickResuscitationEventLink();
@@ -51,31 +54,21 @@ public class TestCase3 {
 		List<String> eventDetails = objMFSignupPage.getEventDetails();
 		objMFSignupPage.clickAddNewEvent();
 		objMFEventsAddPage.clickRemoveSession();
-		String sDay = Helpers.getDateTime("dd");
-		String sMonth = Helpers.getDateTime("MMMM");
-		String sYear = Helpers.getDateTime("yyyy");
-		String sHour = Helpers.getDateTime("HH");
-		String sMinute = Helpers.getDateTime("mm");
-		String sTimeZone = "Europe/Warsaw";
-		String[] sDateTime = { sDay, sMonth, sYear, sHour, sMinute, sTimeZone };
 		objMFEventsAddPage.setStartDate(sDateTime);
-		String[] eDateTime = { "29", "June", "2019", "14", "00", "Europe/Warsaw" };
 		objMFEventsAddPage.setEndDate(eDateTime);
-		String[] eventData = { "9", "2", "200PLN", "150PLN", "This is a simple test to add new events." };
 		objMFEventsAddPage.createEvent(eventData);
-		synchronized (driver) {
-			driver.wait(10000);
-		}
+		Thread.sleep(10000);
 		objDashPage.clickLogOut();
 
 		Assert.assertEquals(alertMsg, "The signup user has conflicting signups");
+
+		String message = String.format("The event will be on %s at %s in %s", eventDetails.get(0), eventDetails.get(1),
+				eventDetails.get(2));
 
 		System.out.println("### Resuscitation training ###");
 		System.out.println("Event date/time: " + eventDate);
 		System.out.println("Duration: " + eventDuration);
 		System.out.println("Room: " + eventLocation);
-		String message = String.format("The event will be on %s at %s in %s", eventDetails.get(0), eventDetails.get(1),
-				eventDetails.get(2));
 		System.out.println(message);
 	}
 }

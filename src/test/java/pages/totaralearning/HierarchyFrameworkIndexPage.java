@@ -10,10 +10,14 @@ public class HierarchyFrameworkIndexPage {
 	WebDriver driver;
 	@FindBy(xpath = "//input[@value='Add new organisation framework']")
 	WebElement addNewOrgFramework;
-	@FindBy(xpath = "//*[@id=\"user-notifications\"]/div/div[2]")
+	@FindBy(xpath = "//*[@id='user-notifications']//div[@class='alert-message']")
 	WebElement alertMessage;
 	@FindBy(linkText = "New Test Organisation")
 	WebElement organisationLink;
+	@FindBy(xpath = "//td[a[text()='New Test Organisation']]/following-sibling::td//a[@title='Delete']")
+	WebElement deleteNewTestOrganisation;
+	@FindBy(linkText = "Manage organisations")
+	WebElement manageOrganisationLink;
 
 	public HierarchyFrameworkIndexPage(WebDriver driver) {
 		this.driver = driver;
@@ -30,5 +34,13 @@ public class HierarchyFrameworkIndexPage {
 
 	public void clickOrgLink() {
 		organisationLink.click();
+	}
+	
+	public void deleteNewTestOrganization() {
+		deleteNewTestOrganisation.click();
+	}
+
+	public void goToManageOrganization() {
+		manageOrganisationLink.click();
 	}
 }

@@ -12,9 +12,9 @@ public class DashboardPage {
 	WebElement manageOrgLink;
 	@FindBy(linkText = "Log out")
 	WebElement logOutLink;
-	@FindBy(xpath = "//*[@id='inst621']/div[2]/ul/li[1]/a")
+	@FindBy(xpath = "//a[contains(normalize-space(),'Certification Completion')]")
 	WebElement certCompltLink;
-	@FindBy(linkText = "15")
+	@FindBy(xpath = "//a[@href=//a[text()='Resuscitation training']/@href]")
 	WebElement resuscitationEventLink;
 
 	public DashboardPage(WebDriver driver) {

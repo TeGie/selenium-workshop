@@ -1,9 +1,11 @@
 package helpers;
 
 import java.text.SimpleDateFormat;
+import java.util.Calendar;
 import java.util.Date;
 import java.util.Locale;
 import java.util.Random;
+import java.util.TimeZone;
 
 public class Helpers {
 
@@ -12,15 +14,14 @@ public class Helpers {
 		return Integer.toString(rand.nextInt(100) + 1);
 	}
 
-	public static String getDateTime(String format) {
-		SimpleDateFormat formatter = new SimpleDateFormat(format, Locale.ENGLISH);
-		String dateTime = formatter.format(new Date());
-		if (format.equals("mm") && (!dateTime.endsWith("5") || !dateTime.endsWith("0"))) {
-			dateTime = Integer.toString(Math.round(Integer.parseInt(dateTime) / 5) * 5);
-			if (dateTime.length() == 1) {
-				dateTime = "0" + dateTime;
-			}
-		}
-		return dateTime;
+	public static String getDateTime(String dateFormat, String timeZone) {
+		SimpleDateFormat formatter = new SimpleDateFormat(dateFormat, Locale.ENGLISH);
+		formatter.setTimeZone(TimeZone.getTimeZone(timeZone));
+		Calendar calendar = Calendar.getInstance();
+		calendar.setTime(new Date());
+		int unroundedMinutes = calendar.get(Calendar.MINUTE);
+		int mod = unroundedMinutes % 5;
+		calendar.add(Calendar.MINUTE, mod < 3 ? -mod : (5 - mod));
+		return formatter.format(calendar.getTime()) + " " + timeZone;
 	}
 }

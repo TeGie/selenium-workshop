@@ -20,15 +20,16 @@ public class TestCase1 {
 	HierarchyFrameworkIndexPage objHFIndexPage;
 	HierarchyIndexPage objHIndexPage;
 	HierarchyItemViewPage objHItemPage;
+	HierarchyFrameworkDeletePage objHFDeletePage;
 
-	public static final String LORE_IPSUM_1 = "Lorem ipsum dolor sit amet, consectetur adipiscing elit, "
+	private static final String LORE_IPSUM_1 = "Lorem ipsum dolor sit amet, consectetur adipiscing elit, "
 			+ "sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, "
 			+ "quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute "
 			+ "irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. "
 			+ "Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim "
 			+ "id est laborum.";
 
-	public static final String LORE_IPSUM_2 = "Morbi luctus, nisi eget tempus faucibus, justo massa iaculis "
+	private static final String LORE_IPSUM_2 = "Morbi luctus, nisi eget tempus faucibus, justo massa iaculis "
 			+ "odio, eget sollicitudin lectus justo ut neque. Aliquam ornare urna sed vestibulum vestibulum. "
 			+ "Donec at enim arcu. Aenean volutpat aliquam maximus. Aenean id scelerisque dolor, eget congue eros. "
 			+ "Integer a mi non velit cursus aliquam vitae eu libero. Aliquam rutrum lorem eu vehicula feugiat. "
@@ -47,13 +48,14 @@ public class TestCase1 {
 	}
 
 	@Test
-	public void testCase1() {
+	public void testCase1() throws InterruptedException {
 		objLandPage = new LandingPage(driver);
 		objDashPage = new DashboardPage(driver);
 		objHFIndexPage = new HierarchyFrameworkIndexPage(driver);
 		objHFEditPage = new HierarchyFrameworkEditPage(driver);
 		objHIndexPage = new HierarchyIndexPage(driver);
 		objHItemPage = new HierarchyItemViewPage(driver, wait);
+		objHFDeletePage = new HierarchyFrameworkDeletePage(driver);
 
 		objLandPage.logAsAdmin();
 		objDashPage.clickManageOrganisations();
@@ -66,6 +68,9 @@ public class TestCase1 {
 		String addedNewOrgMsg = objHItemPage.getAlertMsg();
 		objHItemPage.addGoal();
 		objHItemPage.clickReturnToFramework();
+		objHFIndexPage.goToManageOrganization();
+		objHFIndexPage.deleteNewTestOrganization();
+		objHFDeletePage.confirmRemoveOrganisation();
 		objDashPage.clickLogOut();
 
 		Assert.assertEquals(addedOrgMsg, "The organisation framework \"New Test Organisation\" has been added");
